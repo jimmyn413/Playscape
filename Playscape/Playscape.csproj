@@ -315,9 +315,7 @@
     <Content Include="fonts\Pe-icon-7-strokebb1d.woff" />
     <Content Include="fonts\Pe-icon-7-stroked41d.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\controllers.js" />
-    <Content Include="Scripts\froogaloop2.min.js" />
     <Content Include="Scripts\init.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -337,16 +335,10 @@
     <Content Include="Scripts\jquery.zoomslider.min.js" />
     <Content Include="Scripts\lightgallery-all.js" />
     <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\modalEffects.js" />
-    <Content Include="Scripts\modelclassie.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.6.2.min.js" />
     <Content Include="Scripts\modernizr.custom.js" />
-    <Content Include="Scripts\notifyMe.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\tweecool.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />

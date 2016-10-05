@@ -4,21 +4,17 @@
 	---------------------------
 	1.Ready function
 	2.Load function
-	3.Subscribe JS
-	4.Full height function
-	5.Resize function
-	6.Coyote function
+	3.Full height function
+	4.Resize function
+	5.Playscape function
 		1)Fullpage JS
-		2)Tweeter JS
-		3)Ticker JS
-		4)Counter JS
-		5)Client & Team carousel
-		6)Map initialization js
-	7.Service,Team toggle window
-	8.LightGallery init
-	9.Rotate Portfolio init
-	10.Gradient init
-	11.Placehoder ie9
+		2)Client & Team carousel
+		3)Map initialization js
+	6.Service,Team toggle window
+	7.LightGallery init
+	8.Rotate Portfolio init
+	9.Gradient init
+	10.Placehoder ie9
 
 ************************************* **/
  
@@ -26,7 +22,7 @@
 
 /*****Ready function start*****/
 $(document).ready(function(){
-  coyote();
+  playscape();
   $('.la-anim-1').addClass('la-animate');
 });
 /*****Ready function end*****/
@@ -37,9 +33,7 @@ $(window).load(function(){
 });
 /*****Load function* end*****/
 
-/***** Subscribe JS start *****/
-$("#notifyMe").notifyMe(); 
-/***** Subscribe JS end*****/
+
 
 /***** Full height function start *****/
 var setHeight = function () {
@@ -70,8 +64,8 @@ $(window).on("resize", function () {
 }).resize();
 /***** Resize function end *****/
 
-/***** Coyote function start *****/
-var coyote = function (){
+/***** Playscape function start *****/
+var playscape = function (){
 	/*Fullpage JS*/
 	$('#fullpage').fullpage({
 		menu: '#menu',
@@ -81,27 +75,6 @@ var coyote = function (){
 		navigationPosition: 'right',
 		navigationTooltips: ['home', 'about', 'services','features','video','portfolio','team','contact','google map'],
 		responsiveWidth: 3000
-	});
-	
-	/*Tweeter JS*/
-	$('#tweecool').tweecool({
-      //settings
-       username : 'envato', 
-       limit : 2	
-    });
-	
-	/*Ticker JS*/
-	var nt_title = $('#nt-title').newsTicker({
-		row_height: 220,
-		max_rows: 1,
-		duration: 4000,
-		speed: 400,
-		pauseOnHover: 1
-	});
-	
-	/*Counter JS*/
-	$('#countdown').countdown({ 
-		date: '10/24/2016',
 	});
 	
 	/*Client & Team carousel*/
@@ -180,7 +153,7 @@ var coyote = function (){
 			'</div>'+
 			'<h4 id="firstHeading" class="firstHeading" style="color:#000; margin-bottom:0px;"><strong>Hello Friend!</strong></h4>'+
 			'<div id="bodyContent">'+
-			'<p style="font-family:Verdana; color:#999; font-size:12px; margin-bottom:10px">Here we are. Come to drink a coffee!</p>'+
+			'<p style="font-family:Verdana; color:#999; font-size:12px; margin-bottom:10px">Come join the fun!</p>'+
 			'</div>'+
 			'</div>';
 		var infowindow = new google.maps.InfoWindow({
@@ -196,14 +169,14 @@ var coyote = function (){
 			position: companyPos,
 			map: map,
 			icon: companyImage,               
-			title:"Our Office",
+			title:"Playscape",
 			zIndex: 3});	
 		google.maps.event.addListener(companyMarker, 'click', function() {
 			infowindow.open(map,companyMarker);
 		});
 	}
 }
-/***** Coyote function end *****/
+/***** Playscape function end *****/
 
 /***** Service,Team toggle window start*****/
 $(document).on( 'click', ".services-item .toggle-expand,.team-person .toggle-expand", function (e) {
@@ -230,47 +203,10 @@ $(document).on( 'click', ".services-item .toggle-expand,.team-person .toggle-exp
 });
 /***** Service,Team toggle window end*****/
 
-/***** Style Switcher start*****/
-$(document).on( 'click', "#app_customizer a", function (e) {
-	e.preventDefault();
-	$('#app_customizer').toggleClass('open-customizer');
-	return false;
-});	
-$(document).on( 'click', ".light-dark-wrap span", function (e) {
-	e.preventDefault();
-	var target = $('body');
-	if(this.id == 'light_bg'){
-		$('#dark_bg').removeClass('active-bg');
-		$(this).addClass('active-bg');
-		target.removeClass('dark-theme').addClass('light-theme');
-	}	
-		else if(this.id == 'dark_bg') {
-			$('#light_bg').removeClass('active-bg');
-			$(this).addClass('active-bg');
-			 target.removeClass('light-theme').addClass('dark-theme');
-		} 
-	return false;
-});
 
-$(document).on( 'click', ".colors span", function (e) {
-	e.preventDefault();
-	var target = $('body');
-	if(this.id == 'pink_pick')
-		target.removeClass('blue-color green-color orange-color').addClass('pink-color');
-		else if(this.id == 'blue_pick')
-			target.removeClass('pink-color green-color orange-color').addClass('blue-color');
-			else if(this.id == 'green_pick')
-				target.removeClass('blue-color pink-color orange-color').addClass('green-color');
-				else if (this.id == 'orange_pick')
-					target.removeClass('blue-color green-color pink-color').addClass('orange-color');
-	return false;
-});
-
-/***** Style Switcher end*****/ 
 
 /***** LightGallery init start*****/	
 $('#portfolio').lightGallery({  showThumbByDefault: false,hash: false});
-$('#video_player').lightGallery({  showThumbByDefault: false,hash: false,zoom: false,counter:false});
 /***** LightGallery init end*****/			
 
 /***** Rotate Portfolio init start*****/	
