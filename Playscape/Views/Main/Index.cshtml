@@ -23,6 +23,8 @@
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link href="/bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/angular-bootstrap-colorpicker/3.0.25/css/colorpicker.min.css" rel="stylesheet">
 </head>
 
 <body id="body" data-ng-app="contactApp" class="dark-theme pink-color">
@@ -385,6 +387,59 @@
 
         </section>
         <!--/Features Sec-->
+        <!--Video Sec-->
+        <section class="section video-sec" id="section4" ng-controller="KitchenSinkCtrl as vm">
+
+                <h2 class="text-center">{{ vm.calendarTitle }}</h2>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="btn-group">
+                            <button class="btn btn-primary"
+                                    mwl-date-modifier
+                                    date="vm.viewDate"
+                                    decrement="vm.calendarView">
+                                Previous
+                            </button>
+                            <button class="btn btn-default"
+                                    mwl-date-modifier
+                                    date="vm.viewDate"
+                                    set-to-today>
+                                Today
+                            </button>
+                            <button class="btn btn-primary"
+                                    mwl-date-modifier
+                                    date="vm.viewDate"
+                                    increment="vm.calendarView">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                    <br class="visible-xs visible-sm">
+                    <div class="col-md-6 text-center">
+                        <div class="btn-group">
+                            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
+                            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+                            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
+                            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <mwl-calendar events="vm.events"
+                              view="vm.calendarView"
+                              view-title="vm.calendarTitle"
+                              view-date="vm.viewDate"
+                              on-event-click="vm.eventClicked(calendarEvent)"
+                              on-event-times-changed="vm.eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+                              cell-is-open="vm.isCellOpen"
+                              day-view-start="06:00"
+                              day-view-end="22:59"
+                              day-view-split="30"
+                              cell-modifier="vm.modifyCell(calendarCell)">
+                </mwl-calendar>
+
+</section>
+        <!--/Video Sec-->
         <!--Portfolio Sec-->
         <section class="section portfolio-sec" id="section5">
 
@@ -741,36 +796,41 @@
         <!--/Map Sec-->
     </div>
     <!--/Main Content-->
-
-
     <!-- Scripts -->
     <script src="/Scripts/jquery-1.11.3.min.js"></script>
     <script src="/Scripts/jquery-ui.min.js"></script>
-    <script src="/Scripts/angular.min.js"></script>
+
+    <script src="~/bower_components/angular/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/bower_components/moment/min/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.0/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="/Scripts/app.js"></script>
+    <script src="/bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+
     <script src="/Scripts/modernizr.custom.js"></script>
     <script src="/Scripts/modernizr-2.6.2.min.js"></script>
-    <script src="/Scripts/app.js"></script>
+ 
+
+    <script src="~/Scripts/kitchenSink.js"></script>
     <script src="/Scripts/controllers.js"></script>
     <script src="/Scripts/owl.carousel.min.js"></script>
-    <script src="/Scripts/notifyMe.js"></script>
-    <script src="/Scripts/froogaloop2.min.js"></script>
+    <script src="~/Scripts/classie.js"></script>
     <script src="/Scripts/wow.min.js"></script>
     <script src="/Scripts/jquery.fullpage.js"></script>
     <script src="/Scripts/lightgallery-all.js"></script>
-    <script src="/Scripts/jquery.countdown.js"></script>
-    <script src="/Scripts/jquery.newsTicker.js"></script>
-    <script src="/Scripts/classie.js"></script>
     <script src="/Scripts/main.js"></script>
     <script src="/Scripts/jquery.rotateSlider.js"></script>
-    <script src="/Scripts/modelclassie.js"></script>
-    <script src="/Scripts/modalEffects.js"></script>
     <script src="/Scripts/jquery.xdomainrequest.min.js"></script>
-    <script src="/Scripts/tweecool.js"></script>
     <script src="/Scripts/jquery.placeholder.js"></script>
     <script src="/Scripts/jquery.zoomslider.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+
     <script src="/Scripts/init.js"></script>
+
 </body>
 
 </html>
