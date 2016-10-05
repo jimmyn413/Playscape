@@ -186,7 +186,7 @@ var coyote = function (){
 		var infowindow = new google.maps.InfoWindow({
 			content: contentString
 		});	
-		var companyImage = new google.maps.MarkerImage('img/pin-dark.png',
+		var companyImage = new google.maps.MarkerImage('/img/pin-dark.png',
 			new google.maps.Size(58,63),<!-- Width and height of the marker -->
 			new google.maps.Point(0,0),
 			new google.maps.Point(35,20)<!-- Position of the marker -->

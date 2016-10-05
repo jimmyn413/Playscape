@@ -52,13 +52,6 @@
     var NORMAL_SCROLL =         'fp-normal-scroll';
     var NORMAL_SCROLL_SEL =     '.fp-normal-scroll';
 
-    // section nav
-    var SECTION_NAV =           'fp-nav';
-    var SECTION_NAV_SEL =       '#' + SECTION_NAV;
-    var SECTION_NAV_TOOLTIP =   'fp-tooltip';
-    var SECTION_NAV_TOOLTIP_SEL='.'+SECTION_NAV_TOOLTIP;
-    var SHOW_ACTIVE_TOOLTIP =   'fp-show-active';
-
     // slide
     var SLIDE_DEFAULT_SEL =     '.slide';
     var SLIDE =                 'fp-slide';
@@ -451,14 +444,14 @@
                 if(!isResponsive){
                     FP.setAutoScrolling(false, 'internal');
                     FP.setFitToSection(false, 'internal');
-                    $(SECTION_NAV_SEL).hide();
+
                     $body.addClass(RESPONSIVE);
                 }
             }
             else if(isResponsive){
                 FP.setAutoScrolling(originals.autoScrolling, 'internal');
                 FP.setFitToSection(originals.autoScrolling, 'internal');
-                $(SECTION_NAV_SEL).show();
+
                 $body.removeClass(RESPONSIVE);
             }
         };
@@ -553,13 +546,8 @@
                 //to prevent scrolling while zooming
                 .keyup(keyUpHandler)
 
-                //Scrolls to the section when clicking the navigation bullet
-                .on('click touchstart', SECTION_NAV_SEL + ' a', sectionBulletHandler)
 
-                //Scrolls the slider to the given slide destination for the given section
-                .on('click touchstart', SLIDES_NAV_LINK_SEL, slideBulletHandler)
 
-                .on('click', SECTION_NAV_TOOLTIP_SEL, tooltipTextHandler);
 
             //Scrolling horizontally when clicking on the slider controls.
             $(SECTION_SEL).on('click touchstart', SLIDES_ARROW_SEL, slideArrowHandler);
@@ -642,11 +630,6 @@
             //fixed elements need to be moved out of the plugin container due to problems with CSS3.
             if(options.fixedElements && options.css3){
                 $(options.fixedElements).appendTo($body);
-            }
-
-            //vertical centered of the navigation + active bullet
-            if(options.navigation){
-                addVerticalNavigation();
             }
 
             enableYoutubeAPI();
@@ -779,43 +762,6 @@
             }
         }
 
-        /**
-        * Creates a vertical navigation bar.
-        */
-        function addVerticalNavigation(){
-            $body.append('<div id="' + SECTION_NAV + '"><ul></ul></div>');
-            var nav = $(SECTION_NAV_SEL);
-
-            nav.addClass(function() {
-                return options.showActiveTooltip ? SHOW_ACTIVE_TOOLTIP + ' ' + options.navigationPosition : options.navigationPosition;
-            });
-
-            for (var i = 0; i < $(SECTION_SEL).length; i++) {
-                var link = '';
-                if (options.anchors.length) {
-                    link = options.anchors[i];
-                }
-
-                var li = '<li><a href="#' + link + '"><span></span></a>';
-
-                // Only add tooltip if needed (defined by user)
-                var tooltip = options.navigationTooltips[i];
-
-                if (typeof tooltip !== 'undefined' && tooltip !== '') {
-                    li += '<div class="' + SECTION_NAV_TOOLTIP + ' ' + options.navigationPosition + '">' + tooltip + '</div>';
-                }
-
-                li += '</li>';
-
-                nav.find('ul').append(li);
-            }
-
-            //centering it vertically
-            $(SECTION_NAV_SEL).css('margin-top', '-' + ($(SECTION_NAV_SEL).height()/2) + 'px');
-
-            //activating the current active section
-            $(SECTION_NAV_SEL).find('li').eq($(SECTION_ACTIVE_SEL).index(SECTION_SEL)).find('a').addClass(ACTIVE);
-        }
 
         /**
         * Creates the slim scroll scrollbar for the sections and slides inside them.
@@ -1989,20 +1935,6 @@
         }
 
         /**
-         * Activating the website navigation dots according to the given slide name.
-         */
-        function activateNavDots(name, sectionIndex){
-            if(options.navigation){
-                $(SECTION_NAV_SEL).find(ACTIVE_SEL).removeClass(ACTIVE);
-                if(name){
-                    $(SECTION_NAV_SEL).find('a[href="#' + name + '"]').addClass(ACTIVE);
-                }else{
-                    $(SECTION_NAV_SEL).find('li').eq(sectionIndex).find('a').addClass(ACTIVE);
-                }
-            }
-        }
-
-        /**
          * Activating the website main menu elements according to the given slide name.
          */
         function activateMenuElement(name){
@@ -2017,7 +1949,6 @@
         */
         function activateMenuAndNav(anchor, index){
             activateMenuElement(anchor);
-            activateNavDots(anchor, index);
         }
 
         /**
@@ -2575,10 +2506,6 @@
                 .off('resize', resizeHandler);
 
             $document
-                .off('click', SECTION_NAV_SEL + ' a')
-                .off('mouseenter', SECTION_NAV_SEL + ' li')
-                .off('mouseleave', SECTION_NAV_SEL + ' li')
-                .off('click', SLIDES_NAV_LINK_SEL)
                 .off('mouseover', options.normalScrollElements)
                 .off('mouseout', options.normalScrollElements);
 
@@ -2601,7 +2528,7 @@
             //reseting the `top` or `translate` properties to 0
             silentScroll(0);
 
-            $(SECTION_NAV_SEL + ', ' + SLIDES_NAV_SEL +  ', ' + SLIDES_ARROW_SEL).remove();
+            $(SLIDES_NAV_SEL +  ', ' + SLIDES_ARROW_SEL).remove();
 
             //removing inline styles
             $(SECTION_SEL).css( {
