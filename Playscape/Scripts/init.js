@@ -131,7 +131,7 @@ var playscape = function (){
 	if( $('#map_canvas').length > 0 ){	
 		var settings = {
 			zoom: 16,
-			center: new google.maps.LatLng(33.6120314,-117.8789138),
+			center: new google.maps.LatLng(33.6120808,-117.8788895),
 			mapTypeControl: false,
 			scrollwheel: false,
 			draggable: true,
@@ -164,7 +164,7 @@ var playscape = function (){
 			new google.maps.Point(0,0),
 			new google.maps.Point(35,20)<!-- Position of the marker -->
 		);
-		var companyPos = new google.maps.LatLng(33.6120314,-117.8789138);	
+			var companyPos = new google.maps.LatLng(33.6120808,-117.8788895);	
 		var companyMarker = new google.maps.Marker({
 			position: companyPos,
 			map: map,
