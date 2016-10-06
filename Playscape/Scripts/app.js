@@ -1,6 +1,6 @@
 /** *************Angular app JS*********************/
 "use strict"; 
-var app = angular.module('contactApp', ['mwl.calendar', 'ngAnimate', 'ui.bootstrap', 'colorpicker.module']);
+var app = angular.module('contactApp', ['mwl.calendar', 'ngAnimate', 'ui.bootstrap']);
 
 angular.module('contactApp')
       .config(function (calendarConfig) {
