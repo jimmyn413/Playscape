@@ -18,7 +18,7 @@
     <AssemblyName>Playscape</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -749,11 +749,6 @@
     <Content Include="fonts\et-line.svg" />
     <Content Include="fonts\fontawesome-webfonte0a5.html" />
     <Content Include="fonts\fontawesome-webfonte0a5.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular-2.html" />
-    <Content Include="fonts\glyphicons-halflings-regular-3.html" />
-    <Content Include="fonts\glyphicons-halflings-regular-4.html" />
-    <Content Include="fonts\glyphicons-halflings-regular-5.html" />
-    <Content Include="fonts\glyphicons-halflings-regular.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regulard41d.html" />
     <Content Include="fonts\lgd41d.html" />
@@ -1061,9 +1056,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51565</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://playscape.dev</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://playscape.dev</IISAppRootUrl>
+          <IISUrl>http://localhost:51565/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
