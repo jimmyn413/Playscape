@@ -749,11 +749,6 @@
     <Content Include="fonts\et-line.svg" />
     <Content Include="fonts\fontawesome-webfonte0a5.html" />
     <Content Include="fonts\fontawesome-webfonte0a5.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular-2.html" />
-    <Content Include="fonts\glyphicons-halflings-regular-3.html" />
-    <Content Include="fonts\glyphicons-halflings-regular-4.html" />
-    <Content Include="fonts\glyphicons-halflings-regular-5.html" />
-    <Content Include="fonts\glyphicons-halflings-regular.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regulard41d.html" />
     <Content Include="fonts\lgd41d.html" />
@@ -954,8 +949,8 @@
     <Content Include="bower_components\moment\LICENSE" />
     <Content Include="bower_components\moment\README.md" />
     <Content Include="bower_components\moment\typing-tests\tsconfig.json" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\calendarEventController.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\controllers.js" />
     <Content Include="Scripts\init.js" />
