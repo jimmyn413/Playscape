@@ -1056,9 +1056,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51565</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://playscape.dev</IISUrl>
+          <IISUrl>http://localhost:52035/</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://playscape.dev</IISAppRootUrl>
+          <IISAppRootUrl>http://localhost:52035/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
